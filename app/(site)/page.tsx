@@ -43,7 +43,7 @@ export default function HomePage() {
   const eventTitle = process.env.NEXT_PUBLIC_EVENT_TITLE || 'Mis 15 Años - Milagros';
   const eventAddress = process.env.NEXT_PUBLIC_EVENT_ADDRESS || 'Recepción y Eventos FVC, Av. Universitaria 5380 (3er Piso), Urb. San Eulogio, Lima 7, Comas';
   const eventMapUrl = process.env.NEXT_PUBLIC_EVENT_MAP_URL || 'https://maps.google.com/?q=Av.+Universitaria+5380,+Lima';
-  const musicUrl = process.env.NEXT_PUBLIC_MUSIC_MP3_URL || '/audio/Ed-Sheeran-Perfect.mp3';
+  const musicUrl = '/audio/Ed-Sheeran-Perfect.mp3';
   const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || '+5492645240006';
 
   console.log('Main page - musicUrl:', musicUrl);
