@@ -126,6 +126,11 @@ export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
   };
 
   const testAudioFile = async () => {
+    if (!src) {
+      console.log('AudioPlayer: No src provided for testing');
+      return false;
+    }
+    
     console.log('AudioPlayer: Testing audio file accessibility...');
     try {
       const response = await fetch(src);
