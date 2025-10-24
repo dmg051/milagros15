@@ -14,14 +14,29 @@ export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
 
   useEffect(() => {
     const audio = audioRef.current;
-    if (!audio) return;
+    if (!audio) {
+      console.log('AudioPlayer: No audio element found');
+      return;
+    }
+
+    console.log('AudioPlayer: Setting up audio element');
+    console.log('AudioPlayer: Audio src:', src);
 
     // Establecer volumen al 20% por defecto
     audio.volume = 0.2;
 
-    const handleEnded = () => setIsPlaying(false);
-    const handleLoadStart = () => setIsLoading(true);
-    const handleCanPlay = () => setIsLoading(false);
+    const handleEnded = () => {
+      console.log('AudioPlayer: Audio ended');
+      setIsPlaying(false);
+    };
+    const handleLoadStart = () => {
+      console.log('AudioPlayer: Loading started');
+      setIsLoading(true);
+    };
+    const handleCanPlay = () => {
+      console.log('AudioPlayer: Can play');
+      setIsLoading(false);
+    };
 
     audio.addEventListener('ended', handleEnded);
     audio.addEventListener('loadstart', handleLoadStart);
@@ -32,22 +47,32 @@ export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
       audio.removeEventListener('loadstart', handleLoadStart);
       audio.removeEventListener('canplay', handleCanPlay);
     };
-  }, []);
+  }, [src]);
 
   const togglePlay = async () => {
     const audio = audioRef.current;
-    if (!audio || !src) return;
+    if (!audio || !src) {
+      console.log('AudioPlayer: No audio element or src');
+      return;
+    }
+
+    console.log('AudioPlayer: Toggling play, current state:', isPlaying);
+    console.log('AudioPlayer: Audio src:', src);
 
     try {
       if (isPlaying) {
         audio.pause();
         setIsPlaying(false);
+        console.log('AudioPlayer: Paused');
       } else {
+        // Asegurar que el volumen esté configurado
+        audio.volume = 0.2;
         await audio.play();
         setIsPlaying(true);
+        console.log('AudioPlayer: Playing');
       }
     } catch (error) {
-      console.error('Error playing audio:', error);
+      console.error('AudioPlayer: Error playing audio:', error);
       setIsPlaying(false);
     }
   };

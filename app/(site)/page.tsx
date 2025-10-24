@@ -7,6 +7,10 @@ import CalendarButton from '@/components/CalendarButton';
 import MapButton from '@/components/MapButton';
 import RsvpForm from '@/components/RsvpForm';
 import WhatsappConfirm from '@/components/WhatsappConfirm';
+import SongSuggestion from '@/components/SongSuggestion';
+import WishBox from '@/components/WishBox';
+import GeneralSongSuggestion from '@/components/GeneralSongSuggestion';
+import GeneralWishBox from '@/components/GeneralWishBox';
 import { formatDateTime } from '@/lib/format';
 
 export default function HomePage() {
@@ -38,7 +42,7 @@ export default function HomePage() {
   const eventTitle = process.env.NEXT_PUBLIC_EVENT_TITLE || 'Mis 15 Años - Milagros';
   const eventAddress = process.env.NEXT_PUBLIC_EVENT_ADDRESS || 'Recepción y Eventos FVC, Av. Universitaria 5380 (3er Piso), Urb. San Eulogio, Lima 7, Comas';
   const eventMapUrl = process.env.NEXT_PUBLIC_EVENT_MAP_URL || 'https://maps.google.com/?q=Av.+Universitaria+5380,+Lima';
-  const musicUrl = process.env.NEXT_PUBLIC_MUSIC_MP3_URL || 'https://drive.google.com/file/d/1pZpjdvVeuSY4Cme29tH3tKsqdb0uiFjm/view?usp=sharing';
+  const musicUrl = process.env.NEXT_PUBLIC_MUSIC_MP3_URL || '/audio/Ed Sheeran - Perfect.mp3';
   const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || '+5492645240006';
 
   return (
@@ -179,30 +183,20 @@ export default function HomePage() {
               <h4 className="text-xl font-serif text-bordo mb-4">
                 Buzón de Deseos
               </h4>
-              <p className="text-bordo mb-4">
+              <p className="text-bordo mb-4 script-text">
                 Deja tu mensaje especial
               </p>
-              <a
-                href="#"
-                className="inline-block rounded-full bg-bordo px-6 py-3 text-white font-medium transition-all duration-200 hover:bg-dark-bordo hover:scale-105"
-              >
-                Escribir deseo
-              </a>
+              <GeneralWishBox />
             </div>
             
             <div className="invitation-card rounded-3xl p-6 text-center">
               <h4 className="text-xl font-serif text-bordo mb-4">
                 Sugerir Canciones
               </h4>
-              <p className="text-bordo mb-4">
+              <p className="text-bordo mb-4 script-text">
                 Ayúdanos con la playlist
               </p>
-              <a
-                href="#"
-                className="inline-block rounded-full bg-bordo px-6 py-3 text-white font-medium transition-all duration-200 hover:bg-dark-bordo hover:scale-105"
-              >
-                Sugerir canción
-              </a>
+              <GeneralSongSuggestion />
             </div>
           </div>
         </div>
@@ -265,7 +259,7 @@ export default function HomePage() {
             <img 
               src="/images/poweredby.png" 
               alt="Powered by" 
-              className="h-8 md:h-10 mx-auto"
+              className="h-24 md:h-30 mx-auto"
             />
           </div>
         </div>

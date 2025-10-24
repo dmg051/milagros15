@@ -8,6 +8,8 @@ import CalendarButton from '@/components/CalendarButton';
 import MapButton from '@/components/MapButton';
 import RsvpForm from '@/components/RsvpForm';
 import WhatsappConfirm from '@/components/WhatsappConfirm';
+import SongSuggestion from '@/components/SongSuggestion';
+import WishBox from '@/components/WishBox';
 import { formatDateTime } from '@/lib/format';
 
 interface GuestData {
@@ -71,7 +73,7 @@ export default function InvitationPage() {
   const eventTitle = process.env.NEXT_PUBLIC_EVENT_TITLE || 'Mis 15 Años - Milagros';
   const eventAddress = process.env.NEXT_PUBLIC_EVENT_ADDRESS || 'Recepción y Eventos FVC, Av. Universitaria 5380 (3er Piso), Urb. San Eulogio, Lima 7, Comas';
   const eventMapUrl = process.env.NEXT_PUBLIC_EVENT_MAP_URL || 'https://maps.google.com/?q=Av.+Universitaria+5380,+Lima';
-  const musicUrl = process.env.NEXT_PUBLIC_MUSIC_MP3_URL || '';
+  const musicUrl = process.env.NEXT_PUBLIC_MUSIC_MP3_URL || '/audio/Ed Sheeran - Perfect.mp3';
   const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || '+54911XXXXXXX';
 
   if (loading) {
@@ -193,9 +195,9 @@ export default function InvitationPage() {
               Código de Vestimenta
             </h3>
             <div className="text-lg text-bordo mb-4">
-              <p className="font-medium">Sport Elegante</p>
-              <p className="text-sm text-bordo mt-2">
-                Se reserva el color verde para la quinceañera
+              <p className="font-medium script-text">Sport Elegante</p>
+              <p className="text-sm text-bordo mt-2 script-text">
+                Se reservan los colores dorado y bordó para la quinceañera
               </p>
             </div>
           </div>
@@ -209,7 +211,7 @@ export default function InvitationPage() {
             <h3 className="text-2xl font-serif text-bordo mb-6 floral-decoration">
               Regalos
             </h3>
-            <p className="text-bordo mb-6">
+            <p className="text-bordo mb-6 script-text">
               Tu presencia es el mejor regalo que puedo recibir. Si deseas obsequiar algo, 
               será recibido con mucho amor y gratitud.
             </p>
@@ -247,30 +249,20 @@ export default function InvitationPage() {
               <h4 className="text-xl font-serif text-bordo mb-4">
                 Buzón de Deseos
               </h4>
-              <p className="text-bordo mb-4">
+              <p className="text-bordo mb-4 script-text">
                 Deja tu mensaje especial
               </p>
-              <a
-                href="#"
-                className="inline-block rounded-full bg-bordo px-6 py-3 text-white font-medium transition-all duration-200 hover:bg-dark-bordo hover:scale-105"
-              >
-                Escribir deseo
-              </a>
+              <WishBox recordId={recordId} />
             </div>
             
             <div className="invitation-card rounded-3xl p-6 text-center">
               <h4 className="text-xl font-serif text-bordo mb-4">
                 Sugerir Canciones
               </h4>
-              <p className="text-bordo mb-4">
+              <p className="text-bordo mb-4 script-text">
                 Ayúdanos con la playlist
               </p>
-              <a
-                href="#"
-                className="inline-block rounded-full bg-bordo px-6 py-3 text-white font-medium transition-all duration-200 hover:bg-dark-bordo hover:scale-105"
-              >
-                Sugerir canción
-              </a>
+              <SongSuggestion recordId={recordId} />
             </div>
           </div>
         </div>
@@ -328,11 +320,11 @@ export default function InvitationPage() {
             <h3 className="text-3xl script-text text-bordo mb-6">
               ¡Gracias!
             </h3>
-            <p className="text-lg text-bordo mb-6">
+            <p className="text-lg text-bordo mb-6 script-text">
               Tu presencia hará que este día sea aún más especial. 
               Esperamos celebrar contigo esta nueva etapa de mi vida.
             </p>
-            <p className="text-bordo">
+            <p className="text-bordo script-text">
               Con mucho amor,<br />
               <span className="font-serif text-bordo text-xl">Milagros</span>
             </p>
@@ -347,7 +339,7 @@ export default function InvitationPage() {
             <img 
               src="/images/poweredby.png" 
               alt="Powered by" 
-              className="h-8 md:h-10 mx-auto"
+              className="h-24 md:h-30 mx-auto"
             />
           </div>
         </div>
