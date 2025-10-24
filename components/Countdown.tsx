@@ -40,17 +40,17 @@ export default function Countdown({ eventDate, className = '' }: CountdownProps)
     <div className={`${className}`}>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         {timeUnits.map((unit) => (
-          <div
-            key={unit.label}
-            className="flex flex-col items-center rounded-2xl bg-white/80 p-4 shadow-lg backdrop-blur-sm"
-          >
-            <div className="text-3xl font-bold text-bordo md:text-4xl">
-              {unit.value.toString().padStart(2, '0')}
-            </div>
-            <div className="text-xs font-medium text-gray-600 uppercase tracking-wider">
-              {unit.label}
-            </div>
-          </div>
+                  <div
+                    key={unit.label}
+                    className="flex flex-col items-center rounded-2xl bg-white/80 p-4 shadow-lg backdrop-blur-sm"
+                  >
+                    <div className="text-3xl font-bold text-bordo md:text-4xl">
+                      {unit.value.toString().padStart(2, '0')}
+                    </div>
+                    <div className="text-xs font-medium text-bordo uppercase tracking-wider">
+                      {unit.label}
+                    </div>
+                  </div>
         ))}
       </div>
     </div>

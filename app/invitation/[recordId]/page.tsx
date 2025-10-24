@@ -105,35 +105,37 @@ export default function InvitationPage() {
   }
 
   return (
-    <div className="min-h-screen floral-pattern">
+    <div className="min-h-screen invitation-bg">
       {/* Reproductor de música flotante */}
       <AudioPlayer src={musicUrl} />
       
       {/* Hero Section */}
       <section className="relative py-20 px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          
-          <h1 className="text-5xl md:text-7xl font-serif text-bordo mb-6 floral-decoration">
-            Mis 15 Años
-          </h1>
-          
-          <h2 className="text-3xl md:text-4xl font-serif text-red mb-8">
-            Milagros
-          </h2>
+          <div className="invitation-card rounded-3xl p-12 mb-8 doodle-border">
+            <h1 className="script-title mb-6">
+              Mis 15 Años
+            </h1>
+            
+            <div className="doodle-line mb-8">
+              <h2 className="script-subtitle">
+                Milagros
+              </h2>
+            </div>
           
           {/* Mensaje personalizado para el invitado */}
           {guestData && (
-            <div className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-8">
-              <p className="mb-4">
+            <div className="text-lg md:text-xl text-bordo max-w-2xl mx-auto leading-relaxed">
+              <p className="mb-4 script-text text-xl">
                 ¡Hola <span className="font-semibold text-bordo">{guestData.name.split(' ')[0]}</span>!
               </p>
-              <p className="mb-4">
+              <p className="mb-4 script-text text-xl">
                 Con inmensa alegría y emoción, quiero invitarte a ser parte de uno de los momentos más especiales de mi vida.
               </p>
-              <p className="mb-4">
+              <p className="mb-4 script-text text-xl">
                 Después de 15 años llenos de aprendizajes, risas, sueños y crecimiento, es hora de celebrar esta nueva etapa que comienza.
               </p>
-              <p>
+              <p className="script-text text-xl">
                 Tu presencia haría que este día sea aún más memorable y lleno de amor.
               </p>
             </div>
@@ -144,15 +146,15 @@ export default function InvitationPage() {
       {/* Event Details Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white/80 rounded-2xl p-8 shadow-lg backdrop-blur-sm mb-8">
+          <div className="invitation-card rounded-3xl p-8 mb-8">
             <h3 className="text-3xl font-serif text-bordo mb-8 text-center floral-decoration">
               Detalles del Evento
             </h3>
             
             <div className="grid md:grid-cols-2 gap-8">
               <div className="text-center">
-                <h4 className="text-xl font-serif text-gray-700 mb-4">Fecha y Hora</h4>
-                <p className="text-lg text-gray-600 mb-4">
+                <h4 className="text-xl font-serif text-bordo mb-4">Fecha y Hora</h4>
+                <p className="text-lg text-bordo mb-4">
                   {formatDateTime(eventDate)}
                 </p>
                 <CalendarButton
@@ -163,8 +165,8 @@ export default function InvitationPage() {
               </div>
               
               <div className="text-center">
-                <h4 className="text-xl font-serif text-gray-700 mb-4">Ubicación</h4>
-                <p className="text-gray-600 mb-4">
+                <h4 className="text-xl font-serif text-bordo mb-4">Ubicación</h4>
+                <p className="text-bordo mb-4">
                   {eventAddress}
                 </p>
                 <MapButton mapUrl={eventMapUrl} />
@@ -185,13 +187,13 @@ export default function InvitationPage() {
       {/* Dress Code Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white/80 rounded-2xl p-8 shadow-lg backdrop-blur-sm text-center">
+          <div className="invitation-card rounded-3xl p-8 text-center">
             <h3 className="text-2xl font-serif text-bordo mb-6 floral-decoration">
               Código de Vestimenta
             </h3>
-            <div className="text-lg text-gray-700 mb-4">
+            <div className="text-lg text-bordo mb-4">
               <p className="font-medium">Sport Elegante</p>
-              <p className="text-sm text-gray-600 mt-2">
+              <p className="text-sm text-bordo mt-2">
                 Se reserva el color verde para la quinceañera
               </p>
             </div>
@@ -202,11 +204,11 @@ export default function InvitationPage() {
       {/* Regalos Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white/80 rounded-2xl p-8 shadow-lg backdrop-blur-sm text-center">
+          <div className="invitation-card rounded-3xl p-8 text-center">
             <h3 className="text-2xl font-serif text-bordo mb-6 floral-decoration">
               Regalos
             </h3>
-            <p className="text-gray-700 mb-6">
+            <p className="text-bordo mb-6">
               Tu presencia es el mejor regalo que puedo recibir. Si deseas obsequiar algo, 
               será recibido con mucho amor y gratitud.
             </p>
@@ -220,7 +222,7 @@ export default function InvitationPage() {
                 <h4 className="text-lg font-serif text-bordo">Transferencia Bancaria</h4>
               </div>
               <div className="bg-white rounded-lg p-4 border border-gold/50">
-                <p className="text-sm text-gray-600 mb-2">Alias:</p>
+                <p className="text-sm text-bordo mb-2">Alias:</p>
                 <p className="text-xl font-mono font-bold text-bordo bg-gray-50 px-4 py-2 rounded border">
                   milagros.91218mb
                 </p>
@@ -240,31 +242,31 @@ export default function InvitationPage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white/80 rounded-2xl p-6 shadow-lg backdrop-blur-sm text-center">
-              <h4 className="text-xl font-serif text-sage mb-4">
+            <div className="invitation-card rounded-3xl p-6 text-center">
+              <h4 className="text-xl font-serif text-bordo mb-4">
                 Buzón de Deseos
               </h4>
-              <p className="text-gray-600 mb-4">
+              <p className="text-bordo mb-4">
                 Deja tu mensaje especial
               </p>
               <a
                 href="#"
-                className="inline-block rounded-full bg-sage px-6 py-3 text-white font-medium transition-all duration-200 hover:bg-sage/90 hover:scale-105"
+                className="inline-block rounded-full bg-bordo px-6 py-3 text-white font-medium transition-all duration-200 hover:bg-dark-bordo hover:scale-105"
               >
                 Escribir deseo
               </a>
             </div>
             
-            <div className="bg-white/80 rounded-2xl p-6 shadow-lg backdrop-blur-sm text-center">
-              <h4 className="text-xl font-serif text-sage mb-4">
+            <div className="invitation-card rounded-3xl p-6 text-center">
+              <h4 className="text-xl font-serif text-bordo mb-4">
                 Sugerir Canciones
               </h4>
-              <p className="text-gray-600 mb-4">
+              <p className="text-bordo mb-4">
                 Ayúdanos con la playlist
               </p>
               <a
                 href="#"
-                className="inline-block rounded-full bg-sage px-6 py-3 text-white font-medium transition-all duration-200 hover:bg-sage/90 hover:scale-105"
+                className="inline-block rounded-full bg-bordo px-6 py-3 text-white font-medium transition-all duration-200 hover:bg-dark-bordo hover:scale-105"
               >
                 Sugerir canción
               </a>
@@ -277,14 +279,14 @@ export default function InvitationPage() {
       {guestData && (
         <section className="py-16 px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white/80 rounded-2xl p-8 shadow-lg backdrop-blur-sm text-center">
-              <h3 className="text-2xl font-serif text-sage mb-6">
+            <div className="invitation-card rounded-3xl p-8 text-center">
+              <h3 className="text-2xl font-serif text-bordo mb-6">
                 Tus Pases
               </h3>
-              <p className="text-lg text-gray-700 mb-4">
-                Hemos reservado <span className="font-bold text-sage">{guestData.cantidad}</span> lugar{guestData.cantidad > 1 ? 'es' : ''} en tu honor
+              <p className="text-lg text-bordo mb-4">
+                Hemos reservado <span className="font-bold text-bordo">{guestData.cantidad}</span> lugar{guestData.cantidad > 1 ? 'es' : ''} en tu honor
               </p>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-bordo">
                 Tipo de invitación: <span className="font-medium">{guestData.tipo}</span>
               </p>
               {guestData.rsvpStatus === 'Confirmado' && (
@@ -321,15 +323,15 @@ export default function InvitationPage() {
       {/* Closing Section */}
       <section className="py-20 px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white/80 rounded-2xl p-8 shadow-lg backdrop-blur-sm">
-            <h3 className="text-3xl font-serif text-sage mb-6">
+          <div className="invitation-card rounded-3xl p-8">
+            <h3 className="text-3xl font-serif text-bordo mb-6">
               ¡Gracias!
             </h3>
-            <p className="text-lg text-gray-700 mb-6">
+            <p className="text-lg text-bordo mb-6">
               Tu presencia hará que este día sea aún más especial. 
               Esperamos celebrar contigo esta nueva etapa de mi vida.
             </p>
-            <p className="text-gray-600">
+            <p className="text-bordo">
               Con mucho amor,<br />
               <span className="font-serif text-bordo text-xl">Milagros</span>
             </p>

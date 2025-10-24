@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        'script': ['Dancing Script', 'cursive'],
         'serif': ['Playfair Display', 'serif'],
         'sans': ['Inter', 'sans-serif'],
       },
@@ -14,9 +15,11 @@ module.exports = {
         'bordo': '#8B0000',
         'red': '#DC143C',
         'gold': '#FFD700',
-        'cream': '#F5F5DC',
+        'beige': '#F5F5DC',
+        'cream': '#FFF8DC',
         'soft-red': '#F4E4E4',
         'dark-bordo': '#5C0000',
+        'light-bordo': '#A52A2A',
       },
     },
   },
