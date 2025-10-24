@@ -11,6 +11,7 @@ import WhatsappConfirm from '@/components/WhatsappConfirm';
 import SongSuggestion from '@/components/SongSuggestion';
 import WishBox from '@/components/WishBox';
 import Image from 'next/image';
+import { formatDateTime } from '@/lib/format';
 
 interface GuestData {
   id: string;
