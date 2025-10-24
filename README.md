@@ -166,7 +166,7 @@ vercel --prod
 
 ### 🔧 Variables de Entorno para Vercel
 
-Configura estas variables en el dashboard de Vercel:
+Configura estas variables en el dashboard de Vercel (Settings → Environment Variables):
 
 **Variables del servidor:**
 - `AIRTABLE_BASE_ID` = `appdGZVJ0Nszp9K23`
@@ -188,6 +188,11 @@ Configura estas variables en el dashboard de Vercel:
 - `NEXT_PUBLIC_EVENT_MAP_URL` = `https://maps.google.com/?q=Av.+Universitaria+5380,+Lima`
 - `NEXT_PUBLIC_MUSIC_MP3_URL` = `https://drive.google.com/file/d/1pZpjdvVeuSY4Cme29tH3tKsqdb0uiFjm/view?usp=sharing`
 - `NEXT_PUBLIC_WHATSAPP_PHONE` = `+5492645240006`
+
+### ⚠️ Importante:
+- **NO uses Secrets** de Vercel, solo variables de entorno normales
+- **Reemplaza** `tu_pat_token_aqui` con tu token PAT real de Airtable
+- **Verifica** que todas las variables estén configuradas antes del deploy
 
 ### 📋 Checklist para Deploy
 
