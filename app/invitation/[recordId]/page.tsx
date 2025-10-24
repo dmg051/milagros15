@@ -140,6 +140,7 @@ export default function InvitationPage() {
               </p>
             </div>
           )}
+          </div>
         </div>
       </section>
 
