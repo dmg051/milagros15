@@ -75,6 +75,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="section-divider"></div>
+
       {/* Event Details Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
@@ -116,6 +119,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="section-divider"></div>
+
       {/* Dress Code Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
@@ -132,6 +138,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Divider */}
+      <div className="section-divider"></div>
 
       {/* Regalos Section */}
       <section className="py-16 px-4">
@@ -170,6 +179,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="section-divider"></div>
+
       {/* Links Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
@@ -207,6 +219,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="section-divider"></div>
+
       {/* Pases Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
@@ -220,6 +235,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Divider */}
+      <div className="section-divider"></div>
 
       {/* RSVP Section */}
       <section className="py-16 px-4">

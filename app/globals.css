@@ -43,7 +43,11 @@
   }
   
   .invitation-bg {
-    background: linear-gradient(135deg, #F5F5DC 0%, #FFF8DC 50%, #F4E4E4 100%);
+    background-image: url('/images/Untitled design-18.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     min-height: 100vh;
   }
   
@@ -56,6 +60,17 @@
   .script-text {
     font-family: 'Dancing Script', cursive;
     font-weight: 400;
+  }
+  
+  .section-divider {
+    background-image: url('/images/Roses_line_on_White_background-removebg-preview.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80px;
+    width: 100%;
+    margin: 2rem 0;
+    opacity: 0.8;
   }
   
   .doodle-border {
