@@ -132,7 +132,7 @@ export default function HomePage() {
             <div className="text-lg text-bordo mb-4">
               <p className="font-medium">Sport Elegante</p>
               <p className="text-sm text-bordo mt-2">
-                Se reserva el color verde para la quinceañera
+                Se reservan los colores dorado y bordó para la quinceañera
               </p>
             </div>
           </div>
@@ -155,16 +155,16 @@ export default function HomePage() {
             </p>
             
             {/* Transferencia Bancaria */}
-            <div className="bg-gradient-to-r from-gold/20 to-red/20 rounded-xl p-6 border-2 border-gold/30">
+            <div className="bg-gradient-to-r from-gold/20 to-red/20 rounded-xl p-6 border-2 border-gold/30 text-center">
               <div className="flex items-center justify-center mb-4">
                 <svg className="w-8 h-8 text-bordo mr-3" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm2 6a2 2 0 114 0 2 2 0 01-4 0zm8 0a2 2 0 114 0 2 2 0 01-4 0z" clipRule="evenodd" />
                 </svg>
                 <h4 className="text-lg font-serif text-bordo">Transferencia Bancaria</h4>
               </div>
-              <div className="bg-white rounded-lg p-4 border border-gold/50">
+              <div className="bg-white rounded-lg p-4 border border-gold/50 text-center">
                 <p className="text-sm text-bordo mb-2">Alias:</p>
-                <p className="text-xl font-mono font-bold text-bordo bg-gray-50 px-4 py-2 rounded border">
+                <p className="text-lg md:text-xl font-mono font-bold text-bordo bg-gray-50 px-2 md:px-4 py-2 rounded border break-all">
                   milagros.91218mb
                 </p>
                 <button 
@@ -267,9 +267,9 @@ export default function HomePage() {
               Tu presencia hará que este día sea aún más especial. 
               Esperamos celebrar contigo esta nueva etapa de mi vida.
             </p>
-            <p className="text-bordo">
+            <p className="text-lg text-bordo">
               Con mucho amor,<br />
-              <span className="font-serif text-bordo text-xl">Milagros</span>
+              <span className="text-bordo text-xl">Milagros</span>
             </p>
           </div>
         </div>
