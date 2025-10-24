@@ -83,9 +83,9 @@ export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
     } catch (error) {
       console.error('AudioPlayer: Error playing audio:', error);
       console.error('AudioPlayer: Error details:', {
-        name: error.name,
-        message: error.message,
-        code: error.code
+        name: (error as Error).name,
+        message: (error as Error).message,
+        code: (error as any).code
       });
       setIsPlaying(false);
     }

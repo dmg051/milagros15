@@ -10,7 +10,7 @@ import RsvpForm from '@/components/RsvpForm';
 import WhatsappConfirm from '@/components/WhatsappConfirm';
 import SongSuggestion from '@/components/SongSuggestion';
 import WishBox from '@/components/WishBox';
-import { formatDateTime } from '@/lib/format';
+import Image from 'next/image';
 
 interface GuestData {
   id: string;
@@ -338,9 +338,11 @@ export default function InvitationPage() {
       <section className="py-8 px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="opacity-60 hover:opacity-80 transition-opacity duration-300">
-            <img 
+            <Image 
               src="/images/poweredby.png" 
               alt="Powered by" 
+              width={200}
+              height={60}
               className="h-48 md:h-60 mx-auto"
             />
           </div>
