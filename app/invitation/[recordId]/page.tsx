@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'next/navigation';
 import AudioPlayer from '@/components/AudioPlayer';
 import Countdown from '@/components/Countdown';
@@ -32,13 +32,7 @@ export default function InvitationPage() {
     cantidad: 1,
   });
 
-  useEffect(() => {
-    if (recordId) {
-      fetchGuestData();
-    }
-  }, [recordId]);
-
-  const fetchGuestData = async () => {
+  const fetchGuestData = useCallback(async () => {
     try {
       setLoading(true);
       const response = await fetch(`/api/invitation/${recordId}`);
@@ -60,7 +54,13 @@ export default function InvitationPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [recordId]);
+
+  useEffect(() => {
+    if (recordId) {
+      fetchGuestData();
+    }
+  }, [recordId, fetchGuestData]);
 
   const handleRsvpSuccess = (data: { recordId: string; inviteCode: string }) => {
     // Recargar datos del invitado después del RSVP

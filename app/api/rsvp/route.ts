@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
       'Phone number': normalizePhone(validatedData.phone),
       'Tipo de invitado': validatedData.tipo,
       Cantidad: validatedData.cantidad,
-      'RSVP Status': 'Confirmado',
+      'RSVP': 'Yes',
       'RSVP Timestamp': new Date().toISOString(),
     };
 

@@ -28,7 +28,7 @@ export async function GET(request: NextRequest) {
       },
     });
 
-    return new NextResponse(qrBuffer, {
+    return new NextResponse(qrBuffer as any, {
       status: 200,
       headers: {
         'Content-Type': 'image/png',

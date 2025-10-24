@@ -1,0 +1,26 @@
+{
+  "functions": {
+    "app/api/**/*.ts": {
+      "maxDuration": 30
+    }
+  },
+  "env": {
+    "AIRTABLE_BASE_ID": "@airtable_base_id",
+    "AIRTABLE_TABLE_GUESTS": "@airtable_table_guests", 
+    "AIRTABLE_PAT": "@airtable_pat",
+    "SITE_URL": "@site_url",
+    "EVENT_DATE": "@event_date",
+    "EVENT_TITLE": "@event_title",
+    "EVENT_ADDRESS": "@event_address",
+    "EVENT_MAP_URL": "@event_map_url",
+    "MUSIC_MP3_URL": "@music_mp3_url",
+    "WHATSAPP_PHONE": "@whatsapp_phone",
+    "CHECKIN_PIN": "@checkin_pin",
+    "NEXT_PUBLIC_EVENT_DATE": "@next_public_event_date",
+    "NEXT_PUBLIC_EVENT_TITLE": "@next_public_event_title",
+    "NEXT_PUBLIC_EVENT_ADDRESS": "@next_public_event_address",
+    "NEXT_PUBLIC_EVENT_MAP_URL": "@next_public_event_map_url",
+    "NEXT_PUBLIC_MUSIC_MP3_URL": "@next_public_music_mp3_url",
+    "NEXT_PUBLIC_WHATSAPP_PHONE": "@next_public_whatsapp_phone"
+  }
+}

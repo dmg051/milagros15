@@ -87,13 +87,12 @@ export default function RsvpForm({ className = '', onSuccess, recordId, initialD
         onSuccess?.(result);
         // Limpiar formulario solo si no es una invitación personalizada
         if (!recordId) {
-          setFormData({
-            name: '',
-            phone: '',
-            tipo: 'Cena',
-            cantidad: 1,
-            comentarios: '',
-          });
+                  setFormData({
+                    name: '',
+                    tipo: 'Cena',
+                    cantidad: 1,
+                    comentarios: '',
+                  });
         }
       } else {
         setSubmitMessage({

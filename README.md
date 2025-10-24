@@ -138,6 +138,65 @@ npm run start    # Servidor de producción
 npm run lint     # Verificar código
 ```
 
+## 🚀 Deploy en Vercel
+
+### Opción 1: Deploy automático desde GitHub
+
+1. **Conecta tu repositorio** a Vercel:
+   - Ve a [vercel.com](https://vercel.com)
+   - Importa el proyecto desde GitHub
+   - Selecciona el repositorio `dmg051/milagros15`
+
+2. **Configura las variables de entorno** en Vercel:
+   - Ve a Settings → Environment Variables
+   - Agrega todas las variables listadas abajo
+
+### Opción 2: Deploy manual con Vercel CLI
+
+```bash
+# Instalar Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+
+# Deploy a producción
+vercel --prod
+```
+
+### 🔧 Variables de Entorno para Vercel
+
+Configura estas variables en el dashboard de Vercel:
+
+**Variables del servidor:**
+- `AIRTABLE_BASE_ID` = `appdGZVJ0Nszp9K23`
+- `AIRTABLE_TABLE_GUESTS` = `Guests`
+- `AIRTABLE_PAT` = `tu_pat_token_aqui`
+- `SITE_URL` = `https://tu-dominio.vercel.app` (se actualiza automáticamente)
+- `EVENT_DATE` = `2025-11-14T22:30:00-03:00`
+- `EVENT_TITLE` = `Mis 15 Años - Milagros`
+- `EVENT_ADDRESS` = `Recepción y Eventos FVC, Av. Universitaria 5380 (3er Piso), Urb. San Eulogio, Lima 7, Comas`
+- `EVENT_MAP_URL` = `https://maps.google.com/?q=Av.+Universitaria+5380,+Lima`
+- `MUSIC_MP3_URL` = `https://drive.google.com/file/d/1pZpjdvVeuSY4Cme29tH3tKsqdb0uiFjm/view?usp=sharing`
+- `WHATSAPP_PHONE` = `+5492645240006`
+- `CHECKIN_PIN` = `1234`
+
+**Variables públicas (NEXT_PUBLIC_):**
+- `NEXT_PUBLIC_EVENT_DATE` = `2025-11-14T22:30:00-03:00`
+- `NEXT_PUBLIC_EVENT_TITLE` = `Mis 15 Años - Milagros`
+- `NEXT_PUBLIC_EVENT_ADDRESS` = `Recepción y Eventos FVC, Av. Universitaria 5380 (3er Piso), Urb. San Eulogio, Lima 7, Comas`
+- `NEXT_PUBLIC_EVENT_MAP_URL` = `https://maps.google.com/?q=Av.+Universitaria+5380,+Lima`
+- `NEXT_PUBLIC_MUSIC_MP3_URL` = `https://drive.google.com/file/d/1pZpjdvVeuSY4Cme29tH3tKsqdb0uiFjm/view?usp=sharing`
+- `NEXT_PUBLIC_WHATSAPP_PHONE` = `+5492645240006`
+
+### 📋 Checklist para Deploy
+
+- [ ] Variables de entorno configuradas en Vercel
+- [ ] Token PAT de Airtable con permisos correctos
+- [ ] URL de música accesible públicamente
+- [ ] Fórmula en Airtable actualizada con el dominio de Vercel
+- [ ] Build exitoso (`npm run build`)
+
 ## 🤝 Contribución
 
 1. Fork el proyecto
