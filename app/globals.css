@@ -44,11 +44,34 @@
   
   .invitation-bg {
     background-image: url('/images/Untitled design-18.png');
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
+    position: relative;
+  }
+  
+  .invitation-bg::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/Untitled design-18.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  
+  @media (max-width: 768px) {
+    .invitation-bg,
+    .invitation-bg::before {
+      background-size: cover;
+      background-attachment: scroll;
+    }
   }
   
   .card-bg {
@@ -67,10 +90,46 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    height: 80px;
+    height: 150px;
     width: 100%;
-    margin: 2rem 0;
-    opacity: 0.8;
+    margin: 4rem 0;
+    opacity: 0.95;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(0 2px 4px rgba(139, 0, 0, 0.1));
+  }
+  
+  @media (max-width: 1024px) {
+    .section-divider {
+      height: 120px;
+      margin: 3rem 0;
+      max-width: 600px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .section-divider {
+      height: 100px;
+      margin: 2.5rem 0;
+      max-width: 500px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .section-divider {
+      height: 80px;
+      margin: 2rem 0;
+      max-width: 350px;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .section-divider {
+      height: 60px;
+      margin: 1.5rem 0;
+      max-width: 280px;
+    }
   }
   
   .doodle-border {
