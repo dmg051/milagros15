@@ -74,7 +74,7 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    height: 150px;
+    height: 195px;
     width: 100%;
     margin: 4rem 0;
     opacity: 0.95;
@@ -86,7 +86,7 @@
   
   @media (max-width: 1024px) {
     .section-divider {
-      height: 120px;
+      height: 156px;
       margin: 3rem 0;
       max-width: 600px;
     }
@@ -94,7 +94,7 @@
   
   @media (max-width: 768px) {
     .section-divider {
-      height: 100px;
+      height: 130px;
       margin: 2.5rem 0;
       max-width: 500px;
     }
@@ -102,7 +102,7 @@
   
   @media (max-width: 480px) {
     .section-divider {
-      height: 80px;
+      height: 104px;
       margin: 2rem 0;
       max-width: 350px;
     }
@@ -110,7 +110,7 @@
   
   @media (max-width: 320px) {
     .section-divider {
-      height: 60px;
+      height: 78px;
       margin: 1.5rem 0;
       max-width: 280px;
     }
