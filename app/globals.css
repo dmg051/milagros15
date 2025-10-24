@@ -44,34 +44,10 @@
   
   .invitation-bg {
     background-image: url('/images/Untitled design-18.png');
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     min-height: 100vh;
-    position: relative;
-  }
-  
-  .invitation-bg::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('/images/Untitled design-18.png');
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -1;
-  }
-  
-  @media (max-width: 768px) {
-    .invitation-bg,
-    .invitation-bg::before {
-      background-size: cover;
-      background-attachment: scroll;
-    }
   }
   
   .card-bg {
