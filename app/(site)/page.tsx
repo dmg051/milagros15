@@ -75,14 +75,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="section-divider"></div>
 
       {/* Event Details Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="invitation-card rounded-3xl p-8 mb-8">
-            <h3 className="text-3xl font-serif text-bordo mb-8 text-center floral-decoration">
+            <h3 className="text-3xl font-serif text-bordo mb-8 text-center">
               Detalles del Evento
             </h3>
             
@@ -111,7 +109,7 @@ export default function HomePage() {
 
           {/* Countdown */}
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-serif text-bordo mb-6 floral-decoration">
+            <h3 className="text-2xl font-serif text-bordo mb-6">
               Cuenta Regresiva
             </h3>
             <Countdown eventDate={eventDate} />
@@ -123,7 +121,7 @@ export default function HomePage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="invitation-card rounded-3xl p-8 text-center">
-            <h3 className="text-2xl font-serif text-bordo mb-6 floral-decoration">
+            <h3 className="text-2xl font-serif text-bordo mb-6">
               Código de Vestimenta
             </h3>
             <div className="text-lg text-bordo mb-4">
@@ -140,7 +138,7 @@ export default function HomePage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="invitation-card rounded-3xl p-8 text-center">
-            <h3 className="text-2xl font-serif text-bordo mb-6 floral-decoration">
+            <h3 className="text-2xl font-serif text-bordo mb-6">
               Regalos
             </h3>
             <p className="text-bordo mb-6">
@@ -256,6 +254,19 @@ export default function HomePage() {
               Con mucho amor,<br />
               <span className="text-bordo text-xl">Milagros</span>
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Powered By Section */}
+      <section className="py-8 px-4 text-center">
+        <div className="max-w-4xl mx-auto">
+          <div className="opacity-60 hover:opacity-80 transition-opacity duration-300">
+            <img 
+              src="/images/poweredby.png" 
+              alt="Powered by" 
+              className="h-8 md:h-10 mx-auto"
+            />
           </div>
         </div>
       </section>

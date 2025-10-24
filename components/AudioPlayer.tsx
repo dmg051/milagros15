@@ -16,6 +16,9 @@ export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
     const audio = audioRef.current;
     if (!audio) return;
 
+    // Establecer volumen al 20% por defecto
+    audio.volume = 0.2;
+
     const handleEnded = () => setIsPlaying(false);
     const handleLoadStart = () => setIsLoading(true);
     const handleCanPlay = () => setIsLoading(false);

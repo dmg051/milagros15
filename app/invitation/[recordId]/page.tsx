@@ -339,6 +339,19 @@ export default function InvitationPage() {
           </div>
         </div>
       </section>
+
+      {/* Powered By Section */}
+      <section className="py-8 px-4 text-center">
+        <div className="max-w-4xl mx-auto">
+          <div className="opacity-60 hover:opacity-80 transition-opacity duration-300">
+            <img 
+              src="/images/poweredby.png" 
+              alt="Powered by" 
+              className="h-8 md:h-10 mx-auto"
+            />
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
