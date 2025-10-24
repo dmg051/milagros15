@@ -144,9 +144,6 @@ export default function InvitationPage() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="section-divider"></div>
-
       {/* Event Details Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
@@ -188,9 +185,6 @@ export default function InvitationPage() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="section-divider"></div>
-
       {/* Dress Code Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
@@ -208,9 +202,6 @@ export default function InvitationPage() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="section-divider"></div>
-
       {/* Regalos Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
@@ -224,16 +215,16 @@ export default function InvitationPage() {
             </p>
             
             {/* Transferencia Bancaria */}
-            <div className="bg-gradient-to-r from-gold/20 to-red/20 rounded-xl p-6 border-2 border-gold/30">
+            <div className="bg-gradient-to-r from-gold/20 to-red/20 rounded-xl p-6 border-2 border-gold/30 text-center">
               <div className="flex items-center justify-center mb-4">
                 <svg className="w-8 h-8 text-bordo mr-3" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm2 6a2 2 0 114 0 2 2 0 01-4 0zm8 0a2 2 0 114 0 2 2 0 01-4 0z" clipRule="evenodd" />
                 </svg>
                 <h4 className="text-lg font-serif text-bordo">Transferencia Bancaria</h4>
               </div>
-              <div className="bg-white rounded-lg p-4 border border-gold/50">
+              <div className="bg-white rounded-lg p-4 border border-gold/50 text-center">
                 <p className="text-sm text-bordo mb-2">Alias:</p>
-                <p className="text-xl font-mono font-bold text-bordo bg-gray-50 px-4 py-2 rounded border">
+                <p className="text-sm md:text-lg font-mono font-bold text-bordo bg-gray-50 px-1 md:px-4 py-2 rounded border break-all overflow-hidden">
                   milagros.91218mb
                 </p>
                 <button 
@@ -247,9 +238,6 @@ export default function InvitationPage() {
           </div>
         </div>
       </section>
-
-      {/* Divider */}
-      <div className="section-divider"></div>
 
       {/* Links Section */}
       <section className="py-16 px-4">
@@ -288,9 +276,6 @@ export default function InvitationPage() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="section-divider"></div>
-
       {/* Pases Section - Mostrar información específica del invitado */}
       {guestData && (
         <section className="py-16 px-4">
@@ -314,9 +299,6 @@ export default function InvitationPage() {
           </div>
         </section>
       )}
-
-      {/* Divider */}
-      <div className="section-divider"></div>
 
       {/* RSVP Section */}
       <section className="py-16 px-4">
@@ -343,7 +325,7 @@ export default function InvitationPage() {
       <section className="py-20 px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="invitation-card rounded-3xl p-8">
-            <h3 className="text-3xl font-serif text-bordo mb-6">
+            <h3 className="text-3xl script-text text-bordo mb-6">
               ¡Gracias!
             </h3>
             <p className="text-lg text-bordo mb-6">
