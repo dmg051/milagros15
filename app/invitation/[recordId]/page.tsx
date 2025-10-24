@@ -76,6 +76,8 @@ export default function InvitationPage() {
   const musicUrl = process.env.NEXT_PUBLIC_MUSIC_MP3_URL || '/audio/Ed Sheeran - Perfect.mp3';
   const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || '+54911XXXXXXX';
 
+  console.log('Invitation page - musicUrl:', musicUrl);
+
   if (loading) {
     return (
       <div className="min-h-screen floral-pattern flex items-center justify-center">
@@ -150,13 +152,13 @@ export default function InvitationPage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="invitation-card rounded-3xl p-8 mb-8">
-            <h3 className="text-3xl script-text text-bordo mb-8 text-center">
+            <h3 className="text-3xl script-text text-bordo mb-8 text-center font-bold">
               Detalles del Evento
             </h3>
             
             <div className="grid md:grid-cols-2 gap-8">
               <div className="text-center">
-                <h4 className="text-xl script-text text-bordo mb-4">Fecha y Hora</h4>
+                <h4 className="text-xl script-text text-bordo mb-4 font-bold">Fecha y Hora</h4>
                 <p className="text-lg text-bordo mb-4 script-text">
                   {formatDateTime(eventDate)}
                 </p>
@@ -168,7 +170,7 @@ export default function InvitationPage() {
               </div>
               
               <div className="text-center">
-                <h4 className="text-xl script-text text-bordo mb-4">Ubicación</h4>
+                <h4 className="text-xl script-text text-bordo mb-4 font-bold">Ubicación</h4>
                 <p className="text-bordo mb-4 script-text">
                   {eventAddress}
                 </p>
@@ -179,7 +181,7 @@ export default function InvitationPage() {
 
           {/* Countdown */}
           <div className="text-center mb-8">
-            <h3 className="text-2xl script-text text-bordo mb-6">
+            <h3 className="text-2xl script-text text-bordo mb-6 font-bold">
               Cuenta Regresiva
             </h3>
             <Countdown eventDate={eventDate} />
@@ -191,7 +193,7 @@ export default function InvitationPage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="invitation-card rounded-3xl p-8 text-center">
-            <h3 className="text-2xl script-text text-bordo mb-6">
+            <h3 className="text-2xl script-text text-bordo mb-6 font-bold">
               Código de Vestimenta
             </h3>
             <div className="text-lg text-bordo mb-4">
@@ -208,7 +210,7 @@ export default function InvitationPage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="invitation-card rounded-3xl p-8 text-center">
-            <h3 className="text-2xl script-text text-bordo mb-6">
+            <h3 className="text-2xl script-text text-bordo mb-6 font-bold">
               Regalos
             </h3>
             <p className="text-bordo mb-6 script-text">
@@ -222,7 +224,7 @@ export default function InvitationPage() {
                 <svg className="w-8 h-8 text-bordo mr-3" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm2 6a2 2 0 114 0 2 2 0 01-4 0zm8 0a2 2 0 114 0 2 2 0 01-4 0z" clipRule="evenodd" />
                 </svg>
-                <h4 className="text-lg script-text text-bordo">Transferencia Bancaria</h4>
+                <h4 className="text-lg script-text text-bordo font-bold">Transferencia Bancaria</h4>
               </div>
               <div className="bg-white rounded-lg p-4 border border-gold/50 text-center">
                 <p className="text-sm text-bordo mb-2">Alias:</p>
@@ -246,7 +248,7 @@ export default function InvitationPage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="invitation-card rounded-3xl p-6 text-center">
-              <h4 className="text-xl script-text text-bordo mb-4">
+              <h4 className="text-xl script-text text-bordo mb-4 font-bold">
                 Buzón de Deseos
               </h4>
               <p className="text-bordo mb-4 script-text">
@@ -256,7 +258,7 @@ export default function InvitationPage() {
             </div>
             
             <div className="invitation-card rounded-3xl p-6 text-center">
-              <h4 className="text-xl script-text text-bordo mb-4">
+              <h4 className="text-xl script-text text-bordo mb-4 font-bold">
                 Sugerir Canciones
               </h4>
               <p className="text-bordo mb-4 script-text">
@@ -273,7 +275,7 @@ export default function InvitationPage() {
         <section className="py-16 px-4">
           <div className="max-w-4xl mx-auto">
             <div className="invitation-card rounded-3xl p-8 text-center">
-              <h3 className="text-2xl script-text text-bordo mb-6">
+              <h3 className="text-2xl script-text text-bordo mb-6 font-bold">
                 Tus Pases
               </h3>
               <p className="text-lg text-bordo mb-4">
@@ -317,7 +319,7 @@ export default function InvitationPage() {
       <section className="py-20 px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="invitation-card rounded-3xl p-8">
-            <h3 className="text-3xl script-text text-bordo mb-6">
+            <h3 className="text-3xl script-text text-bordo mb-6 font-bold">
               ¡Gracias!
             </h3>
             <p className="text-lg text-bordo mb-6 script-text">
@@ -326,7 +328,7 @@ export default function InvitationPage() {
             </p>
             <p className="text-bordo script-text">
               Con mucho amor,<br />
-              <span className="font-serif text-bordo text-xl">Milagros</span>
+              <span className="text-bordo text-xl script-text">Milagros</span>
             </p>
           </div>
         </div>

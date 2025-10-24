@@ -58,6 +58,8 @@ export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
 
     console.log('AudioPlayer: Toggling play, current state:', isPlaying);
     console.log('AudioPlayer: Audio src:', src);
+    console.log('AudioPlayer: Audio readyState:', audio.readyState);
+    console.log('AudioPlayer: Audio networkState:', audio.networkState);
 
     try {
       if (isPlaying) {
@@ -67,19 +69,34 @@ export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
       } else {
         // Asegurar que el volumen esté configurado
         audio.volume = 0.2;
+        
+        // Intentar cargar el audio si no está cargado
+        if (audio.readyState < 2) {
+          console.log('AudioPlayer: Loading audio...');
+          audio.load();
+        }
+        
         await audio.play();
         setIsPlaying(true);
-        console.log('AudioPlayer: Playing');
+        console.log('AudioPlayer: Playing successfully');
       }
     } catch (error) {
       console.error('AudioPlayer: Error playing audio:', error);
+      console.error('AudioPlayer: Error details:', {
+        name: error.name,
+        message: error.message,
+        code: error.code
+      });
       setIsPlaying(false);
     }
   };
 
   if (!src) {
+    console.log('AudioPlayer: No src provided, not rendering');
     return null;
   }
+
+  console.log('AudioPlayer: Rendering with src:', src);
 
   return (
     <div className={`fixed top-4 right-4 z-50 ${className}`}>
@@ -109,7 +126,7 @@ export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
           </svg>
         )}
       </button>
-      <audio ref={audioRef} src={src} preload="none" loop />
+      <audio ref={audioRef} src={src} preload="metadata" loop />
     </div>
   );
 }

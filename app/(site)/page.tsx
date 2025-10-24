@@ -45,6 +45,8 @@ export default function HomePage() {
   const musicUrl = process.env.NEXT_PUBLIC_MUSIC_MP3_URL || '/audio/Ed Sheeran - Perfect.mp3';
   const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || '+5492645240006';
 
+  console.log('Main page - musicUrl:', musicUrl);
+
   return (
     <div className="min-h-screen invitation-bg">
       {/* Reproductor de música flotante */}
@@ -84,13 +86,13 @@ export default function HomePage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="invitation-card rounded-3xl p-8 mb-8">
-            <h3 className="text-3xl font-serif text-bordo mb-8 text-center">
+            <h3 className="text-3xl script-text text-bordo mb-8 text-center font-bold">
               Detalles del Evento
             </h3>
             
             <div className="grid md:grid-cols-2 gap-8">
               <div className="text-center">
-                <h4 className="text-xl font-serif text-bordo mb-4">Fecha y Hora</h4>
+                <h4 className="text-xl script-text text-bordo mb-4 font-bold">Fecha y Hora</h4>
                 <p className="text-lg text-bordo mb-4">
                   {formatDateTime(eventDate)}
                 </p>
@@ -102,7 +104,7 @@ export default function HomePage() {
               </div>
               
               <div className="text-center">
-                <h4 className="text-xl font-serif text-bordo mb-4">Ubicación</h4>
+                <h4 className="text-xl script-text text-bordo mb-4 font-bold">Ubicación</h4>
                 <p className="text-bordo mb-4">
                   {eventAddress}
                 </p>
@@ -113,7 +115,7 @@ export default function HomePage() {
 
           {/* Countdown */}
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-serif text-bordo mb-6">
+            <h3 className="text-2xl script-text text-bordo mb-6 font-bold">
               Cuenta Regresiva
             </h3>
             <Countdown eventDate={eventDate} />
@@ -125,7 +127,7 @@ export default function HomePage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="invitation-card rounded-3xl p-8 text-center">
-            <h3 className="text-2xl font-serif text-bordo mb-6">
+            <h3 className="text-2xl script-text text-bordo mb-6 font-bold">
               Código de Vestimenta
             </h3>
             <div className="text-lg text-bordo mb-4">
@@ -142,7 +144,7 @@ export default function HomePage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="invitation-card rounded-3xl p-8 text-center">
-            <h3 className="text-2xl font-serif text-bordo mb-6">
+            <h3 className="text-2xl script-text text-bordo mb-6 font-bold">
               Regalos
             </h3>
             <p className="text-bordo mb-6">
@@ -180,7 +182,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="invitation-card rounded-3xl p-6 text-center">
-              <h4 className="text-xl font-serif text-bordo mb-4">
+              <h4 className="text-xl script-text text-bordo mb-4 font-bold">
                 Buzón de Deseos
               </h4>
               <p className="text-bordo mb-4 script-text">
@@ -190,7 +192,7 @@ export default function HomePage() {
             </div>
             
             <div className="invitation-card rounded-3xl p-6 text-center">
-              <h4 className="text-xl font-serif text-bordo mb-4">
+              <h4 className="text-xl script-text text-bordo mb-4 font-bold">
                 Sugerir Canciones
               </h4>
               <p className="text-bordo mb-4 script-text">
@@ -206,7 +208,7 @@ export default function HomePage() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="invitation-card rounded-3xl p-8 text-center">
-            <h3 className="text-2xl font-serif text-bordo mb-6">
+            <h3 className="text-2xl script-text text-bordo mb-6 font-bold">
               Tus Pases
             </h3>
             <p className="text-lg text-bordo">
@@ -237,7 +239,7 @@ export default function HomePage() {
       <section className="py-20 px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="invitation-card rounded-3xl p-8">
-            <h3 className="text-3xl script-text text-bordo mb-6">
+            <h3 className="text-3xl script-text text-bordo mb-6 font-bold">
               ¡Gracias!
             </h3>
             <p className="text-lg text-bordo mb-6">
@@ -246,7 +248,7 @@ export default function HomePage() {
             </p>
             <p className="text-lg text-bordo">
               Con mucho amor,<br />
-              <span className="text-bordo text-xl">Milagros</span>
+              <span className="text-bordo text-xl script-text">Milagros</span>
             </p>
           </div>
         </div>
