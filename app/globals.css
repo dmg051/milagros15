@@ -44,9 +44,9 @@
   
   .invitation-bg {
     background-image: url('/images/Untitled design-19.png');
-    background-size: auto 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: repeat-y;
     min-height: 100vh;
     background-color: #F5F5DC;
   }
@@ -54,6 +54,7 @@
   @media (max-width: 768px) {
     .invitation-bg {
       background-size: 100% auto;
+      background-repeat: repeat-y;
     }
   }
   
