@@ -259,7 +259,7 @@ export default function HomePage() {
             <img 
               src="/images/poweredby.png" 
               alt="Powered by" 
-              className="h-24 md:h-30 mx-auto"
+              className="h-48 md:h-60 mx-auto"
             />
           </div>
         </div>
