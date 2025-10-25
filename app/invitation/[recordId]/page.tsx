@@ -86,7 +86,17 @@ export default function InvitationPage() {
     return eventDate;
   };
 
+  // Función para formatear la fecha mostrada (forzar 14 de noviembre)
+  const getDisplayDate = () => {
+    if (guestData?.tipo === 'Después de cena') {
+      // Forzar que muestre 14 de noviembre aunque sea 00:00
+      return '2025-11-14T00:00:00-03:00';
+    }
+    return eventDate;
+  };
+
   const currentEventDate = getEventDate();
+  const displayDate = getDisplayDate();
 
   console.log('Invitation page - musicUrl:', musicUrl);
 
@@ -172,7 +182,7 @@ export default function InvitationPage() {
               <div className="text-center">
                         <h4 className="text-xl script-text text-bordo mb-4 font-bold">Fecha y Hora</h4>
                         <p className="text-lg text-bordo mb-4 script-text">
-                          {formatDateTime(currentEventDate)}
+                          {formatDateTime(displayDate)}
                         </p>
                         <CalendarButton
                           title={eventTitle}
