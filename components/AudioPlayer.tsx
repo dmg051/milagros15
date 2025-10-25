@@ -28,15 +28,32 @@ export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
 
     // Función para manejar la primera interacción del usuario
     const handleFirstUserInteraction = async () => {
-      if (!hasUserInteractedRef.current && audio.readyState >= 2) {
-        console.log('AudioPlayer: First user interaction detected - starting playback');
+      console.log('AudioPlayer: User interaction detected, hasUserInteracted:', hasUserInteractedRef.current);
+      console.log('AudioPlayer: Audio readyState:', audio.readyState);
+      
+      if (!hasUserInteractedRef.current) {
+        console.log('AudioPlayer: First interaction - marking as interacted');
         hasUserInteractedRef.current = true;
+        
+        // Intentar reproducir inmediatamente
         try {
+          console.log('AudioPlayer: Attempting to play audio...');
           await audio.play();
           setIsPlaying(true);
-          console.log('AudioPlayer: Playback started on user interaction');
+          console.log('AudioPlayer: ✅ Playback started successfully!');
         } catch (error) {
-          console.log('AudioPlayer: Failed to start playback on user interaction:', error);
+          console.log('AudioPlayer: ❌ Failed to start playback:', error);
+          // Si falla, intentar cargar primero
+          try {
+            console.log('AudioPlayer: Trying to load audio first...');
+            audio.load();
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            await audio.play();
+            setIsPlaying(true);
+            console.log('AudioPlayer: ✅ Playback started after load!');
+          } catch (secondError) {
+            console.log('AudioPlayer: ❌ Still failed after load:', secondError);
+          }
         }
       }
     };
@@ -46,6 +63,8 @@ export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
     events.forEach(event => {
       document.addEventListener(event, handleFirstUserInteraction, { once: true, passive: true });
     });
+
+    console.log('AudioPlayer: Event listeners added for:', events);
 
     const handleEnded = () => {
       console.log('AudioPlayer: Audio ended');
