@@ -58,12 +58,26 @@ export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
     audio.addEventListener('error', handleError);
     audio.addEventListener('loadeddata', handleLoadedData);
 
+    // Autoplay cuando el audio esté listo
+    const handleCanPlayThrough = () => {
+      console.log('AudioPlayer: Can play through - starting autoplay');
+      audio.play().then(() => {
+        setIsPlaying(true);
+        console.log('AudioPlayer: Autoplay started successfully');
+      }).catch((error) => {
+        console.log('AudioPlayer: Autoplay failed (user interaction required):', error);
+      });
+    };
+
+    audio.addEventListener('canplaythrough', handleCanPlayThrough);
+
     return () => {
       audio.removeEventListener('ended', handleEnded);
       audio.removeEventListener('loadstart', handleLoadStart);
       audio.removeEventListener('canplay', handleCanPlay);
       audio.removeEventListener('error', handleError);
       audio.removeEventListener('loadeddata', handleLoadedData);
+      audio.removeEventListener('canplaythrough', handleCanPlayThrough);
     };
   }, [src]);
 

@@ -117,7 +117,7 @@ export default function InvitationPage() {
       {/* Hero Section */}
       <section className="relative py-20 px-4 text-center">
         <div className="max-w-4xl mx-auto">
-          <div className="invitation-card rounded-3xl p-12 mb-8 doodle-border">
+                  <div className="invitation-card hero-card-bg rounded-3xl p-12 mb-8 doodle-border">
             <h1 className="script-title mb-6">
               Mis 15 Años
             </h1>
@@ -197,12 +197,12 @@ export default function InvitationPage() {
             <h3 className="text-2xl script-text text-bordo mb-6 font-bold">
               Código de Vestimenta
             </h3>
-            <div className="text-lg text-bordo mb-4">
-              <p className="font-medium script-text">Sport Elegante</p>
-              <p className="text-sm text-bordo mt-2 script-text">
-                Se reservan los colores dorado y bordó para la quinceañera
-              </p>
-            </div>
+                    <div className="text-lg text-bordo mb-4">
+                      <p className="font-medium script-text">Sport Elegante</p>
+                      <p className="text-sm text-bordo mt-2 script-text">
+                        Se reserva el color bordó para la quinceañera
+                      </p>
+                    </div>
           </div>
         </div>
       </section>

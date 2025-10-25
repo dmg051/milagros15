@@ -188,9 +188,16 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  .script-subtitle {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2rem;
-    color: #DC143C;
-  }
-}
+          .script-subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #DC143C;
+          }
+          
+          .hero-card-bg {
+            background-image: url('/images/tinyflowers.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+        }
