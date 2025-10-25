@@ -70,12 +70,23 @@ export default function InvitationPage() {
     fetchGuestData();
   };
 
-  const eventDate = process.env.NEXT_PUBLIC_EVENT_DATE || '2025-07-19T20:00:00-03:00';
+  const eventDate = process.env.NEXT_PUBLIC_EVENT_DATE || '2025-11-14T21:30:00-03:00';
+  const eventDateAfterDinner = process.env.NEXT_PUBLIC_EVENT_DATE_AFTER_DINNER || '2025-11-15T01:30:00-03:00';
   const eventTitle = process.env.NEXT_PUBLIC_EVENT_TITLE || 'Mis 15 Años - Milagros';
   const eventAddress = process.env.NEXT_PUBLIC_EVENT_ADDRESS || 'Recepción y Eventos FVC, Av. Universitaria 5380 (3er Piso), Urb. San Eulogio, Lima 7, Comas';
   const eventMapUrl = process.env.NEXT_PUBLIC_EVENT_MAP_URL || 'https://maps.google.com/?q=Av.+Universitaria+5380,+Lima';
   const musicUrl = '/audio/Ed-Sheeran-Perfect.mp3';
   const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || '+54911XXXXXXX';
+
+  // Función para obtener la fecha correcta según el tipo de invitación
+  const getEventDate = () => {
+    if (guestData?.tipo === 'Después de cena') {
+      return eventDateAfterDinner;
+    }
+    return eventDate;
+  };
+
+  const currentEventDate = getEventDate();
 
   console.log('Invitation page - musicUrl:', musicUrl);
 
@@ -159,15 +170,15 @@ export default function InvitationPage() {
             
             <div className="grid md:grid-cols-2 gap-8">
               <div className="text-center">
-                <h4 className="text-xl script-text text-bordo mb-4 font-bold">Fecha y Hora</h4>
-                <p className="text-lg text-bordo mb-4 script-text">
-                  {formatDateTime(eventDate)}
-                </p>
-                <CalendarButton
-                  title={eventTitle}
-                  start={eventDate}
-                  location={eventAddress}
-                />
+                        <h4 className="text-xl script-text text-bordo mb-4 font-bold">Fecha y Hora</h4>
+                        <p className="text-lg text-bordo mb-4 script-text">
+                          {formatDateTime(currentEventDate)}
+                        </p>
+                        <CalendarButton
+                          title={eventTitle}
+                          start={currentEventDate}
+                          location={eventAddress}
+                        />
               </div>
               
               <div className="text-center">
@@ -185,7 +196,7 @@ export default function InvitationPage() {
             <h3 className="text-2xl script-text text-bordo mb-6 font-bold">
               Cuenta Regresiva
             </h3>
-            <Countdown eventDate={eventDate} />
+                    <Countdown eventDate={currentEventDate} />
           </div>
         </div>
       </section>
