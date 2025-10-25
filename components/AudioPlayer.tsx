@@ -10,8 +10,8 @@ interface AudioPlayerProps {
 export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [hasUserInteracted, setHasUserInteracted] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const hasUserInteractedRef = useRef(false);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -28,9 +28,9 @@ export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
 
     // Función para manejar la primera interacción del usuario
     const handleFirstUserInteraction = async () => {
-      if (!hasUserInteracted && audio.readyState >= 2) {
+      if (!hasUserInteractedRef.current && audio.readyState >= 2) {
         console.log('AudioPlayer: First user interaction detected - starting playback');
-        setHasUserInteracted(true);
+        hasUserInteractedRef.current = true;
         try {
           await audio.play();
           setIsPlaying(true);
@@ -42,9 +42,9 @@ export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
     };
 
     // Agregar event listeners para detectar cualquier interacción del usuario
-    const events = ['click', 'touchstart', 'keydown'];
+    const events = ['click', 'touchstart', 'keydown', 'mousedown', 'scroll'];
     events.forEach(event => {
-      document.addEventListener(event, handleFirstUserInteraction, { once: true });
+      document.addEventListener(event, handleFirstUserInteraction, { once: true, passive: true });
     });
 
     const handleEnded = () => {
@@ -116,8 +116,8 @@ export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
     }
 
     // Si es la primera interacción, marcar como interactuado
-    if (!hasUserInteracted) {
-      setHasUserInteracted(true);
+    if (!hasUserInteractedRef.current) {
+      hasUserInteractedRef.current = true;
     }
 
     console.log('AudioPlayer: Toggling play, current state:', isPlaying);
