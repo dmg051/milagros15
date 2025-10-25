@@ -3,12 +3,12 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Mis 15 Años - Alessandra',
+  title: 'Mis 15 Años - Milagros',
   description: 'Invitación especial para celebrar mis 15 años',
   keywords: 'quinceañera, cumpleaños, fiesta, celebración',
-  authors: [{ name: 'Alessandra' }],
+  authors: [{ name: 'Milagros' }],
   openGraph: {
-    title: 'Mis 15 Años - Alessandra',
+    title: 'Mis 15 Años - Milagros',
     description: 'Invitación especial para celebrar mis 15 años',
     type: 'website',
   },

@@ -190,67 +190,35 @@ export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
     }
   };
 
-  const testAudioFile = async () => {
-    if (!src) {
-      console.log('AudioPlayer: No src provided for testing');
-      return false;
-    }
-    
-    console.log('AudioPlayer: Testing audio file accessibility...');
-    try {
-      const response = await fetch(src);
-      console.log('AudioPlayer: Fetch response:', response.status, response.statusText);
-      if (response.ok) {
-        console.log('AudioPlayer: Audio file is accessible');
-        return true;
-      } else {
-        console.error('AudioPlayer: Audio file not accessible:', response.status);
-        return false;
-      }
-    } catch (error) {
-      console.error('AudioPlayer: Error testing audio file:', error);
-      return false;
-    }
-  };
 
   return (
     <div className={`fixed top-4 right-4 z-50 ${className}`}>
-      <div className="flex flex-col gap-2">
-        <button
-          onClick={togglePlay}
-          disabled={isLoading}
-          className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm shadow-lg transition-all duration-300 hover:bg-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold/50 disabled:opacity-50"
-          aria-label={isPlaying ? 'Pausar música' : 'Reproducir música'}
-        >
-          {isLoading ? (
-            <div className="h-4 w-4 animate-spin rounded-full border-2 border-bordo border-t-transparent" />
-          ) : (
-            <svg
-              className={`h-5 w-5 text-bordo transition-all duration-200 ${
-                isPlaying ? 'scale-110' : 'group-hover:scale-110'
-              }`}
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {isPlaying ? (
-                // Icono de pausa
-                <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
-              ) : (
-                // Icono de play
-                <path d="M8 5v14l11-7z" />
-              )}
-            </svg>
-          )}
-        </button>
-        
-        {/* Botón de prueba temporal */}
-        <button
-          onClick={testAudioFile}
-          className="text-xs bg-red-500 text-white px-2 py-1 rounded"
-        >
-          Test
-        </button>
-      </div>
+      <button
+        onClick={togglePlay}
+        disabled={isLoading}
+        className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-sm shadow-lg transition-all duration-300 hover:bg-white hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold/50 disabled:opacity-50"
+        aria-label={isPlaying ? 'Pausar música' : 'Reproducir música'}
+      >
+        {isLoading ? (
+          <div className="h-4 w-4 animate-spin rounded-full border-2 border-bordo border-t-transparent" />
+        ) : (
+          <svg
+            className={`h-5 w-5 text-bordo transition-all duration-200 ${
+              isPlaying ? 'scale-110' : 'group-hover:scale-110'
+            }`}
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            {isPlaying ? (
+              // Icono de pausa
+              <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+            ) : (
+              // Icono de play
+              <path d="M8 5v14l11-7z" />
+            )}
+          </svg>
+        )}
+      </button>
       <audio ref={audioRef} src={src} preload="metadata" loop />
     </div>
   );
