@@ -71,7 +71,7 @@ export default function InvitationPage() {
   };
 
   const eventDate = process.env.NEXT_PUBLIC_EVENT_DATE || '2025-11-14T21:30:00-03:00';
-  const eventDateAfterDinner = process.env.NEXT_PUBLIC_EVENT_DATE_AFTER_DINNER || '2025-11-15T01:30:00-03:00';
+  const eventDateAfterDinner = process.env.NEXT_PUBLIC_EVENT_DATE_AFTER_DINNER || '2025-11-15T00:00:00-03:00';
   const eventTitle = process.env.NEXT_PUBLIC_EVENT_TITLE || 'Mis 15 Años - Milagros';
   const eventAddress = process.env.NEXT_PUBLIC_EVENT_ADDRESS || 'Recepción y Eventos FVC, Av. Universitaria 5380 (3er Piso), Urb. San Eulogio, Lima 7, Comas';
   const eventMapUrl = process.env.NEXT_PUBLIC_EVENT_MAP_URL || 'https://maps.google.com/?q=Av.+Universitaria+5380,+Lima';
