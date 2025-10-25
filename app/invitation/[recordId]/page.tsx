@@ -98,6 +98,16 @@ export default function InvitationPage() {
   const currentEventDate = getEventDate();
   const displayDate = getDisplayDate();
 
+  // Función para extraer el código de 4 dígitos del recordId
+  const getEntryCode = () => {
+    if (recordId && recordId.length >= 4) {
+      return recordId.slice(-4).toUpperCase();
+    }
+    return 'XXXX';
+  };
+
+  const entryCode = getEntryCode();
+
   console.log('Invitation page - musicUrl:', musicUrl);
 
   if (loading) {
@@ -292,29 +302,40 @@ export default function InvitationPage() {
         </div>
       </section>
 
-      {/* Pases Section - Mostrar información específica del invitado */}
-      {guestData && (
-        <section className="py-16 px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="invitation-card rounded-3xl p-8 text-center">
-              <h3 className="text-2xl script-text text-bordo mb-6 font-bold">
-                Tus Pases
-              </h3>
-              <p className="text-lg text-bordo mb-4">
-                Hemos reservado <span className="font-bold text-bordo">{guestData.cantidad}</span> lugar{guestData.cantidad > 1 ? 'es' : ''} en tu honor
-              </p>
-              <p className="text-sm text-bordo">
-                Tipo de invitación: <span className="font-medium">{guestData.tipo}</span>
-              </p>
-              {guestData.rsvpStatus === 'Confirmado' && (
-                <div className="mt-4 inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">
-                  ✓ Confirmado
-                </div>
+              {/* Pases Section - Mostrar información específica del invitado */}
+              {guestData && (
+                <section className="py-16 px-4">
+                  <div className="max-w-4xl mx-auto">
+                    <div className="invitation-card rounded-3xl p-8 text-center">
+                      <h3 className="text-2xl script-text text-bordo mb-6 font-bold">
+                        Tus Pases
+                      </h3>
+                      <p className="text-lg text-bordo mb-4">
+                        Hemos reservado <span className="font-bold text-bordo">{guestData.cantidad}</span> lugar{guestData.cantidad > 1 ? 'es' : ''} en tu honor
+                      </p>
+                      <p className="text-sm text-bordo mb-6">
+                        Tipo de invitación: <span className="font-medium">{guestData.tipo}</span>
+                      </p>
+                      
+                      {/* Código de entrada */}
+                      <div className="bg-gradient-to-r from-gold/20 to-red/20 rounded-xl p-6 border-2 border-gold/30 mt-6">
+                        <p className="text-bordo mb-3 script-text">
+                          Mostrá tu código en la entrada para ser parte de esta noche mágica
+                        </p>
+                        <div className="text-3xl font-bold text-bordo bg-white rounded-lg p-4 border border-gold/50 inline-block">
+                          {entryCode}
+                        </div>
+                      </div>
+                      
+                      {guestData.rsvpStatus === 'Confirmado' && (
+                        <div className="mt-4 inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">
+                          ✓ Confirmado
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </section>
               )}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* RSVP Section */}
       <section className="py-16 px-4">
