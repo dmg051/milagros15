@@ -10,6 +10,7 @@ interface AudioPlayerProps {
 export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [hasUserInteracted, setHasUserInteracted] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
@@ -24,6 +25,27 @@ export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
 
     // Establecer volumen al 20% por defecto
     audio.volume = 0.2;
+
+    // Función para manejar la primera interacción del usuario
+    const handleFirstUserInteraction = async () => {
+      if (!hasUserInteracted && audio.readyState >= 2) {
+        console.log('AudioPlayer: First user interaction detected - starting playback');
+        setHasUserInteracted(true);
+        try {
+          await audio.play();
+          setIsPlaying(true);
+          console.log('AudioPlayer: Playback started on user interaction');
+        } catch (error) {
+          console.log('AudioPlayer: Failed to start playback on user interaction:', error);
+        }
+      }
+    };
+
+    // Agregar event listeners para detectar cualquier interacción del usuario
+    const events = ['click', 'touchstart', 'keydown'];
+    events.forEach(event => {
+      document.addEventListener(event, handleFirstUserInteraction, { once: true });
+    });
 
     const handleEnded = () => {
       console.log('AudioPlayer: Audio ended');
@@ -78,6 +100,11 @@ export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
       audio.removeEventListener('error', handleError);
       audio.removeEventListener('loadeddata', handleLoadedData);
       audio.removeEventListener('canplaythrough', handleCanPlayThrough);
+      
+      // Remover event listeners de interacción del usuario
+      events.forEach(event => {
+        document.removeEventListener(event, handleFirstUserInteraction);
+      });
     };
   }, [src]);
 
@@ -86,6 +113,11 @@ export default function AudioPlayer({ src, className = '' }: AudioPlayerProps) {
     if (!audio || !src) {
       console.log('AudioPlayer: No audio element or src');
       return;
+    }
+
+    // Si es la primera interacción, marcar como interactuado
+    if (!hasUserInteracted) {
+      setHasUserInteracted(true);
     }
 
     console.log('AudioPlayer: Toggling play, current state:', isPlaying);
