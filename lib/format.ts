@@ -32,7 +32,22 @@ export function formatTime(date: string | Date): string {
 }
 
 export function formatDateTime(date: string | Date): string {
-  return `${formatDate(date)} a las ${formatTime(date)}`;
+  // Parsear fecha como ISO pero forzar zona horaria local
+  let dateObj: Date;
+  if (typeof date === 'string') {
+    // Extraer año, mes, día, hora y minuto de la string ISO
+    const match = date.match(/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+    if (match) {
+      const [, year, month, day, hour, minute] = match;
+      // Crear fecha local (sin ajuste de zona horaria)
+      dateObj = new Date(parseInt(year), parseInt(month) - 1, parseInt(day), parseInt(hour), parseInt(minute));
+    } else {
+      dateObj = new Date(date);
+    }
+  } else {
+    dateObj = date;
+  }
+  return `${formatDate(dateObj)} a las ${formatTime(dateObj)}`;
 }
 
 export function getTimeUntilEvent(eventDate: string): {
