@@ -92,7 +92,8 @@ export default function InvitationPage() {
       // Forzar que muestre 14 de noviembre aunque sea 00:00
       return '2025-11-14T00:00:00-03:00';
     }
-    return eventDate;
+    // Para "A cena", forzar que muestre 21:30 exactamente (sin ajuste UTC)
+    return '2025-11-14T21:30:00-03:00';
   };
 
   const currentEventDate = getEventDate();

@@ -47,7 +47,16 @@ export function formatDateTime(date: string | Date): string {
   } else {
     dateObj = date;
   }
-  return `${formatDate(dateObj)} a las ${formatTime(dateObj)}`;
+  
+  // Formatear con la hora exacta sin ajustes
+  const formattedDate = `${dateObj.toLocaleDateString('es-ES', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  })} a las ${String(dateObj.getHours()).padStart(2, '0')}:${String(dateObj.getMinutes()).padStart(2, '0')}`;
+  
+  return formattedDate;
 }
 
 export function getTimeUntilEvent(eventDate: string): {
