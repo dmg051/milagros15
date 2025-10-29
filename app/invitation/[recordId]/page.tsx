@@ -318,6 +318,13 @@ export default function InvitationPage() {
                         Tipo de invitación: <span className="font-medium">{guestData.tipo}</span>
                       </p>
                       
+                      {/* Instrucción de traje de baño */}
+                      <div className="mb-6">
+                        <p className="text-lg text-bordo script-text font-medium">
+                          Llevar traje de baño 👙🩳
+                        </p>
+                      </div>
+                      
                       {/* Código de entrada */}
                       <div className="bg-gradient-to-r from-gold/20 to-red/20 rounded-xl p-6 border-2 border-gold/30 mt-6">
                         <p className="text-bordo mb-3 script-text">
