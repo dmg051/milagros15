@@ -189,17 +189,39 @@ export default function InvitationPage() {
               Detalles del Evento
             </h3>
             
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-8">
               <div className="text-center">
-                        <h4 className="text-xl script-text text-bordo mb-4 font-bold">Fecha y Hora</h4>
-                        <p className="text-lg text-bordo mb-4 script-text">
-                          {formatDateTime(displayDate)}
-                        </p>
-                        <CalendarButton
-                          title={eventTitle}
-                          start={currentEventDate}
-                          location={eventAddress}
-                        />
+                <h4 className="text-xl script-text text-bordo mb-4 font-bold">Fecha y Hora</h4>
+                <p className="text-lg text-bordo mb-4 script-text">
+                  {formatDateTime(displayDate)}
+                </p>
+                <CalendarButton
+                  title={eventTitle}
+                  start={currentEventDate}
+                  location={eventAddress}
+                />
+              </div>
+              
+              {/* Mensaje de hielera animado - Posicionado arriba de Ubicación */}
+              <div className="text-center">
+                <div className="relative rounded-2xl p-6 shadow-lg overflow-hidden las-vegas-border mx-auto max-w-2xl">
+                  {/* Background suavizado */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-gold/15 via-red/15 to-gold/15 rounded-2xl"></div>
+                  
+                  {/* Efecto de brillo animado */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent animate-shimmer"></div>
+                  
+                  {/* Borde animado estilo Las Vegas */}
+                  <div className="absolute inset-0 las-vegas-border-animation rounded-2xl"></div>
+                  
+                  <div className="relative z-10">
+                    <p className="text-xl md:text-2xl script-text text-bordo font-bold animate-pulse-slow">
+                      A partir de la 01:30hs.. Hielera en mano{' '}
+                      <span className="inline-block animate-bounce">🍹</span>
+                      <span className="inline-block animate-bounce-delayed">🥶</span>!!
+                    </p>
+                  </div>
+                </div>
               </div>
               
               <div className="text-center">
@@ -208,22 +230,6 @@ export default function InvitationPage() {
                   {eventAddress}
                 </p>
                 <MapButton mapUrl={eventMapUrl} />
-              </div>
-            </div>
-            
-            {/* Mensaje de hielera animado */}
-            <div className="mt-8 mb-4">
-              <div className="relative bg-gradient-to-r from-gold/30 via-red/30 to-gold/30 rounded-2xl p-6 border-4 border-gold/50 shadow-lg overflow-hidden">
-                {/* Efecto de brillo animado */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
-                
-                <div className="relative z-10">
-                  <p className="text-xl md:text-2xl script-text text-bordo font-bold animate-pulse-slow">
-                    A partir de la 01:30hs.. Hielera en mano{' '}
-                    <span className="inline-block animate-bounce">🍹</span>
-                    <span className="inline-block animate-bounce-delayed">🥶</span>!!
-                  </p>
-                </div>
               </div>
             </div>
           </div>
