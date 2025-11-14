@@ -21,6 +21,17 @@ module.exports = {
         'dark-bordo': '#5C0000',
         'light-bordo': '#A52A2A',
       },
+      animation: {
+        'shimmer': 'shimmer 3s ease-in-out infinite',
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'bounce-delayed': 'bounce 1.5s ease-in-out infinite 0.3s',
+      },
+      keyframes: {
+        shimmer: {
+          '0%': { transform: 'translateX(-100%) skewX(-15deg)' },
+          '100%': { transform: 'translateX(200%) skewX(-15deg)' },
+        },
+      },
     },
   },
   plugins: [],

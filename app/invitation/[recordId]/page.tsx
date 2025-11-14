@@ -210,6 +210,22 @@ export default function InvitationPage() {
                 <MapButton mapUrl={eventMapUrl} />
               </div>
             </div>
+            
+            {/* Mensaje de hielera animado */}
+            <div className="mt-8 mb-4">
+              <div className="relative bg-gradient-to-r from-gold/30 via-red/30 to-gold/30 rounded-2xl p-6 border-4 border-gold/50 shadow-lg overflow-hidden">
+                {/* Efecto de brillo animado */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
+                
+                <div className="relative z-10">
+                  <p className="text-xl md:text-2xl script-text text-bordo font-bold animate-pulse-slow">
+                    A partir de la 01:30hs.. Hielera en mano{' '}
+                    <span className="inline-block animate-bounce">🍹</span>
+                    <span className="inline-block animate-bounce-delayed">🥶</span>!!
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Countdown */}
