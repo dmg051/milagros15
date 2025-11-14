@@ -73,8 +73,9 @@ export default function InvitationPage() {
   const eventDate = process.env.NEXT_PUBLIC_EVENT_DATE || '2025-11-14T21:30:00-03:00';
   const eventDateAfterDinner = process.env.NEXT_PUBLIC_EVENT_DATE_AFTER_DINNER || '2025-11-15T00:00:00-03:00';
   const eventTitle = process.env.NEXT_PUBLIC_EVENT_TITLE || 'Mis 15 Años - Milagros';
-  const eventAddress = process.env.NEXT_PUBLIC_EVENT_ADDRESS || 'Recepción y Eventos FVC, Av. Universitaria 5380 (3er Piso), Urb. San Eulogio, Lima 7, Comas';
-  const eventMapUrl = process.env.NEXT_PUBLIC_EVENT_MAP_URL || 'https://maps.google.com/?q=Av.+Universitaria+5380,+Lima';
+  const eventAddressOld = 'Recepción y Eventos FVC, Av. Universitaria 5380 (3er Piso), Urb. San Eulogio, Lima 7, Comas';
+  const eventAddress = 'Ruta 40 y calle 9';
+  const eventMapUrl = 'https://maps.app.goo.gl/etxtXm3rCVT17ZMr5?g_st=aw';
   const musicUrl = '/audio/Ed-Sheeran-Perfect.mp3';
   const whatsappPhone = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || '+54911XXXXXXX';
 
@@ -226,9 +227,42 @@ export default function InvitationPage() {
               
               <div className="text-center">
                 <h4 className="text-xl script-text text-bordo mb-4 font-bold">Ubicación</h4>
-                <p className="text-bordo mb-4 script-text">
-                  {eventAddress}
-                </p>
+                
+                {/* Alerta de cambio de ubicación */}
+                <div className="mb-6 p-4 bg-gradient-to-r from-red/20 via-bordo/20 to-red/20 rounded-xl border-2 border-red/50 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center justify-center mb-2">
+                      <span className="text-2xl animate-bounce">⚠️</span>
+                      <p className="text-lg md:text-xl script-text text-bordo font-bold ml-2">
+                        ¡IMPORTANTE! Cambio de Ubicación
+                      </p>
+                      <span className="text-2xl animate-bounce-delayed ml-2">⚠️</span>
+                    </div>
+                    <p className="text-sm text-bordo/80 mb-3">
+                      La dirección anterior ya no es válida
+                    </p>
+                    
+                    {/* Dirección anterior tachada */}
+                    <div className="bg-white/50 rounded-lg p-3 mb-3">
+                      <p className="text-sm text-gray-500 line-through decoration-2 decoration-red">
+                        {eventAddressOld}
+                      </p>
+                      <p className="text-xs text-red mt-1 font-semibold">❌ NO VÁLIDA</p>
+                    </div>
+                    
+                    {/* Nueva dirección destacada */}
+                    <div className="bg-gradient-to-r from-gold/30 to-red/30 rounded-lg p-4 border-2 border-gold/60 shadow-lg">
+                      <p className="text-xs text-bordo/70 mb-1 font-semibold uppercase tracking-wide">
+                        ✨ Nueva Ubicación ✨
+                      </p>
+                      <p className="text-xl md:text-2xl script-text text-bordo font-bold">
+                        {eventAddress}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
                 <MapButton mapUrl={eventMapUrl} />
               </div>
             </div>
