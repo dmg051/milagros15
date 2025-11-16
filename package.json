@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/node": "^20",
+    "@types/puppeteer": "^5.4.7",
     "@types/qrcode": "^1.5.5",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -18,6 +19,7 @@
     "ics": "^2.44.0",
     "next": "14.2.5",
     "postcss": "^8.4.39",
+    "puppeteer": "^24.30.0",
     "qrcode": "^1.5.3",
     "react": "^18",
     "react-dom": "^18",
