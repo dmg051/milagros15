@@ -39,8 +39,9 @@ export async function GET(request: NextRequest) {
 
     await browser.close();
 
-    // Retornar el PDF
-    return new NextResponse(pdf, {
+    // Retornar el PDF - convertir buffer a formato compatible
+    const pdfBuffer = Buffer.from(pdf);
+    return new Response(pdfBuffer as unknown as BodyInit, {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': 'attachment; filename="invitacion-15-anos-milagros.pdf"',
